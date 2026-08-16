@@ -1,0 +1,9 @@
+{
+  "name": "Undetecta",
+  "description": "Write like a human. Every time.",
+  "requestFramePermissions": [
+    "clipboard-read",
+    "clipboard-write"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

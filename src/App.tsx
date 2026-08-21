@@ -48,6 +48,11 @@ export default function App() {
 
       {/* Ad Footer */}
       <AdFooter />
+
+      {/* Credit Footer */}
+      <footer className="text-center pb-6 pt-2 text-xs text-gray-400">
+        Built by Wasay
+      </footer>
     </div>
   );
 }

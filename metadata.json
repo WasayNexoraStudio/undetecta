@@ -1,6 +1,6 @@
 {
-  "name": "Undetecta",
-  "description": "Write like a human. Every time.",
+  "name": "Undetecta - Free AI Text Humanizer & AI Content Detector",
+  "description": "Humanize AI-generated text to sound natural and check any content's AI-detection probability — free, fast, and no signup required.",
   "requestFramePermissions": [
     "clipboard-read",
     "clipboard-write"

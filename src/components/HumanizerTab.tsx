@@ -98,6 +98,7 @@ export function HumanizerTab() {
             </div>
           </div>
           <select
+            aria-label="Select tone"
             value={tone}
             onChange={(e) => setTone(e.target.value as Tone)}
             className="text-sm bg-gray-50 border border-gray-200 text-gray-700 rounded-xl px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-colors cursor-pointer"
@@ -160,6 +161,7 @@ export function HumanizerTab() {
         
         <div className="relative">
           <textarea
+            aria-label="Humanized Output"
             readOnly
             value={outputText}
             placeholder={isLoading ? "Humanizing your text..." : "Your rewritten text will appear here..."}

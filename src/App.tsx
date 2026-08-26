@@ -17,8 +17,11 @@ export default function App() {
         
         {/* Tab Switcher */}
         <div className="flex justify-center mb-8">
-          <div className="bg-white p-1 rounded-2xl shadow-sm border border-gray-100 inline-flex">
+          <div className="bg-white p-1 rounded-2xl shadow-sm border border-gray-100 inline-flex" role="tablist" aria-label="Tool sections">
             <button
+              role="tab"
+              aria-selected={activeTab === 'humanize'}
+              aria-controls="humanize-panel"
               onClick={() => setActiveTab('humanize')}
               className={`px-6 py-2.5 rounded-xl font-medium text-sm transition-all ${
                 activeTab === 'humanize' 
@@ -29,6 +32,9 @@ export default function App() {
               Humanize Text
             </button>
             <button
+              role="tab"
+              aria-selected={activeTab === 'detect'}
+              aria-controls="detect-panel"
               onClick={() => setActiveTab('detect')}
               className={`px-6 py-2.5 rounded-xl font-medium text-sm transition-all ${
                 activeTab === 'detect' 
@@ -42,7 +48,12 @@ export default function App() {
         </div>
 
         {/* Active Tab Content */}
-        {activeTab === 'humanize' ? <HumanizerTab /> : <DetectorTab />}
+        <div 
+          id={activeTab === 'humanize' ? "humanize-panel" : "detect-panel"} 
+          role="tabpanel"
+        >
+          {activeTab === 'humanize' ? <HumanizerTab /> : <DetectorTab />}
+        </div>
         
       </main>
 

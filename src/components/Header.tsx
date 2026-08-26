@@ -10,7 +10,7 @@ export function Header() {
         <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
           Undetecta
         </h1>
-        <p className="text-gray-500 text-lg">
+        <p className="text-gray-600 text-lg">
           Write like a human. Every time.
         </p>
       </div>

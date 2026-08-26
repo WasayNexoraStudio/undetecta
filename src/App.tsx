@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Header } from './components/Header';
 import { HumanizerTab } from './components/HumanizerTab';
 import { DetectorTab } from './components/DetectorTab';
-import { AdFooter } from './components/AdFooter';
 
 type Tab = 'humanize' | 'detect';
 
@@ -72,9 +71,6 @@ export default function App() {
           </p>
         </div>
       </section>
-
-      {/* Ad Footer */}
-      <AdFooter />
 
       {/* Credit Footer */}
       <footer className="text-center pb-6 pt-2 text-xs text-gray-400">

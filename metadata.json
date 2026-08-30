@@ -1,6 +1,6 @@
 {
-  "name": "Undetecta - Free AI Text Humanizer & AI Content Detector",
-  "description": "Humanize AI-generated text to sound natural and check any content's AI-detection probability — free, fast, and no signup required.",
+  "name": "Free AI Humanizer & AI Detector - Undetecta (No Signup)",
+  "description": "Free AI humanizer tool — rewrite ChatGPT, Claude & Gemini text to sound human. Plus a free AI detector to check any text's AI-probability. No signup required.",
   "requestFramePermissions": [
     "clipboard-read",
     "clipboard-write"

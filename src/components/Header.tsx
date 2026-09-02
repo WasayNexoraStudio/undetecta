@@ -32,6 +32,12 @@ export function Header() {
           >
             AI Humanizer
           </Link>
+          <Link 
+            to="/ai-detector" 
+            className={`px-4 py-2 rounded-lg transition-colors ${location.pathname === '/ai-detector' ? 'bg-gray-100 text-gray-900' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'}`}
+          >
+            AI Detector
+          </Link>
         </nav>
       </div>
     </header>

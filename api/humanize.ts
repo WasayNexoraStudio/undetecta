@@ -28,6 +28,11 @@ IMPORTANT: Provide ONLY the single final rewritten text. Do not include any expl
 
 Text:
 ${text}`,
+      config: {
+        thinkingConfig: {
+          thinkingLevel: "low"
+        }
+      }
     });
 
     res.status(200).json({ result: interaction.output_text });

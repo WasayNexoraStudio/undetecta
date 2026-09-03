@@ -1,4 +1,4 @@
-import { GoogleGenAI } from "@google/genai";
+import { GoogleGenAI, Type } from "@google/genai";
 
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
@@ -20,28 +20,25 @@ export default async function handler(req: any, res: any) {
       apiKey: process.env.GEMINI_API_KEY,
     });
 
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
-      contents: `Analyze the following text and estimate how likely it is to be AI-generated. Return a JSON object with two fields: "percentage" (a number between 0 and 100) and "explanation" (a brief one-line explanation of your reasoning).
+    const interaction = await ai.interactions.create({
+      model: "gemini-3.6-flash",
+      input: `Analyze the following text and estimate how likely it is to be AI-generated. Return a JSON object with two fields: "percentage" (a number between 0 and 100) and "explanation" (a brief one-line explanation of your reasoning).
         
 Text:
 ${text}`,
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: "object",
-          properties: {
-            percentage: { type: "integer" },
-            explanation: { type: "string" }
-          },
-          required: ["percentage", "explanation"]
-        }
+      response_format: {
+        type: Type.OBJECT,
+        properties: {
+          percentage: { type: Type.INTEGER },
+          explanation: { type: Type.STRING }
+        },
+        required: ["percentage", "explanation"]
       }
     });
 
     let data;
     try {
-      data = JSON.parse(response.text || "{}");
+      data = JSON.parse(interaction.output_text || "{}");
     } catch (e) {
       throw new Error("Failed to parse AI response");
     }

@@ -28,10 +28,8 @@ IMPORTANT: Provide ONLY the single final rewritten text. Do not include any expl
 
 Text:
 ${text}`,
-      config: {
-        thinkingConfig: {
-          thinkingLevel: "low"
-        }
+      generation_config: {
+        thinking_level: "low"
       }
     });
 

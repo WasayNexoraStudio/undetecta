@@ -26,10 +26,8 @@ export default async function handler(req: any, res: any) {
         
 Text:
 ${text}`,
-      config: {
-        thinkingConfig: {
-          thinkingLevel: "low"
-        }
+      generation_config: {
+        thinking_level: "low"
       },
       response_format: {
         type: Type.OBJECT,

@@ -22,10 +22,8 @@ export default async function handler(req: any, res: any) {
 
     const interaction = await ai.interactions.create({
       model: "gemini-3.6-flash",
-      input: `Rewrite the following text to sound more natural, human-written, and non-repetitive in a ${tone} tone. Keep the core meaning intact but reduce patterns typical of AI content. 
-
-IMPORTANT: Provide ONLY the single final rewritten text. Do not include any explanations, headers, options, bullet points, or conversational filler. Output only the pure humanized text ready to copy.
-
+      input: `Rewrite this text in a ${tone} tone to sound natural and human-written. Provide ONLY the rewritten text, without any explanations, headers, or conversational filler.
+      
 Text:
 ${text}`,
       generation_config: {

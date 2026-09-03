@@ -40,7 +40,16 @@ export function DetectorTab() {
         body: JSON.stringify({ text: inputText }),
       });
       
-      const data: DetectResponse = await res.json();
+      const responseText = await res.text();
+      let data: DetectResponse;
+      try {
+        data = JSON.parse(responseText);
+      } catch (err) {
+        console.error("API response was not valid JSON:", responseText);
+        throw new Error(
+          "The server returned an empty or invalid response. This often happens if the API backend isn't running (e.g., when deployed to Vercel without Serverless Functions) or if a hosting rewrite rule blocked the request."
+        );
+      }
       
       if (!res.ok || data.error) {
         throw new Error(data.error || "Failed to analyze text");

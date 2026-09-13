@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { CanonicalLink } from './components/CanonicalLink';
 import { Header } from './components/Header';
 import { Home } from './pages/Home';
 import { HumanizerPage } from './pages/HumanizerPage';
@@ -10,6 +11,7 @@ import { TermsPage } from './pages/TermsPage';
 export default function App() {
   return (
     <Router>
+      <CanonicalLink />
       <div className="min-h-screen bg-gray-50 text-gray-900 font-sans selection:bg-blue-100 flex flex-col">
         <Header />
         

@@ -3,6 +3,7 @@ import { CanonicalLink } from './components/CanonicalLink';
 import { Header } from './components/Header';
 import { Home } from './pages/Home';
 import { HumanizerPage } from './pages/HumanizerPage';
+import { ChatGPTHumanizerPage } from './pages/ChatGPTHumanizerPage';
 import { DetectorPage } from './pages/DetectorPage';
 import { AboutPage } from './pages/AboutPage';
 import { PrivacyPage } from './pages/PrivacyPage';
@@ -19,6 +20,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/ai-humanizer" element={<HumanizerPage />} />
+            <Route path="/chatgpt-humanizer" element={<ChatGPTHumanizerPage />} />
             <Route path="/ai-detector" element={<DetectorPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
